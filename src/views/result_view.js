@@ -14,12 +14,8 @@ ResultView.prototype.bindEvents = function () {
 
 ResultView.prototype.displayResult = function (isPrime) {
   const resultElement = document.querySelector('#result')
-
   if (isPrime === true ) {
-    PubSub.subscribe('FormView:inputted-number', (event) => {
-      number = Number(event.detail)
-      resultElement.textContent = `Yes, ${number} is Prime!`
-    })
+    resultElement.textContent = `Yes, it is Prime!`
   } else {
     resultElement.textContent = "Not Prime!"
   }
